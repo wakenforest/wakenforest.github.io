@@ -299,43 +299,14 @@
 
       
         
-          
-            <h3 id="python3安装"><a href="#python3安装" class="headerlink" title="python3安装"></a>python3安装</h3><p>安装最新版本的EPEL</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install epel-release</span><br></pre></td></tr></table></figure>
-
-<p>用yum安装python 3.6:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install python36</span><br></pre></td></tr></table></figure>
-
-<p>安装pip3</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install python36-setuptools</span><br><span class="line">easy_install-3.6 pip</span><br></pre></td></tr></table></figure>
-
-<h3 id="安装django"><a href="#安装django" class="headerlink" title="安装django"></a>安装django</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install django</span><br></pre></td></tr></table></figure>
-
-<p>安装virtualenv和virtualenvwrapper</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install virtualenv</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install virtualenvwrapper</span><br></pre></td></tr></table></figure>
-
-<p>还是</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo easy_install virtualenvwrapper</span><br></pre></td></tr></table></figure>
-
-<p>这个时候执行mkvirtualenv时无法找到命令，需要增加下面的内容到.bashrc中。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export PATH=/usr/local/bin:$PATH</span><br><span class="line">source /usr/local/bin/virtualenvwrapper.sh</span><br></pre></td></tr></table></figure>
-
-<p>我开始执行上述命令，就可以使用mkvirtualenv。但是关闭终端后就不行了。所以还是需要将上述两行加入bashrc中。</p>
-<p>在root中，使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkvirtualenv blog-env -p &apos;which python3.6&apos;</span><br></pre></td></tr></table></figure>
-
-<p>再激活虚拟环境：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">workon blog-env</span><br></pre></td></tr></table></figure>
-
-<p>安装了djangorestframework不能正常import rest_framework </p>
-<p>选择普通用户，无法执行导入.bashrc中那两条语句，陷入死循环。</p>
-<p>于是不使用虚拟环境，可以正常使用blog。</p>
-<p>需要在settings.py中加入 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<p>python3 manage.py runserver 0.0.0.0:8000<br>```</p>
-
-          
+          <p>摘要</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/06/27/在云服务器上安装python3并部署blog/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
