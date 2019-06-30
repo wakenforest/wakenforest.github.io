@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="无线通信数据传输模块调研一、2G/GPRS模块主要是现在使用的MC8331     特性 参数    尺寸 44.5×28.5×7.85mm   频段 CDMA800MHz   模式 CDMA2000 1X   速率 153.6Kbps/153.6Kbps (DL/UL)   接口/封装 40Pin+10Pin 1.27mm排插   驱动 Win2K/XP/Vista/Linux   指令集 标准">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Wakenforest">
+<meta property="og:url" content="http://yoursite.com/2019/06/30/模块调研/index.html">
+<meta property="og:site_name" content="Wakenforest">
+<meta property="og:description" content="无线通信数据传输模块调研一、2G/GPRS模块主要是现在使用的MC8331     特性 参数    尺寸 44.5×28.5×7.85mm   频段 CDMA800MHz   模式 CDMA2000 1X   速率 153.6Kbps/153.6Kbps (DL/UL)   接口/封装 40Pin+10Pin 1.27mm排插   驱动 Win2K/XP/Vista/Linux   指令集 标准">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/06/30/模块调研/media/07b0b6098f36e21bdc578fb022ff33a2.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/30/模块调研/media/0f6480fd2ae5d89b561dd4c3530aed78.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/30/模块调研/media/5fa9e29dd9dbcb366b963b5bcd9d973c.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/30/模块调研/media/773f0fb38d38586172de758581e702a0.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/30/模块调研/media/1f7b272e0db26c380acdc7f81e21ef38.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/30/模块调研/media/d1d78db87c8fea4c2baa3e0e95e287b7.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/30/模块调研/media/3d8a37697ce14d0600059d9e3e4cee73.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/30/模块调研/media/09e2d89401912baf89264c11d8588131.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/30/模块调研/media/f27b0fba5fef32b6d05eac938fce97a6.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/30/模块调研/media/e80e6c6e59020baf9995a8ddbf08c681.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/30/模块调研/media/68135d596aeb485915d4fe4207944fa4.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/30/模块调研/media/d182ceb533a80112a07044ea1a23ed08.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/30/模块调研/media/fbe164b1887b2812b2b8fcff2fe1b1a9.png">
+<meta property="og:updated_time" content="2019-06-30T11:08:01.350Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Wakenforest">
+<meta name="twitter:description" content="无线通信数据传输模块调研一、2G/GPRS模块主要是现在使用的MC8331     特性 参数    尺寸 44.5×28.5×7.85mm   频段 CDMA800MHz   模式 CDMA2000 1X   速率 153.6Kbps/153.6Kbps (DL/UL)   接口/封装 40Pin+10Pin 1.27mm排插   驱动 Win2K/XP/Vista/Linux   指令集 标准">
+<meta name="twitter:image" content="http://yoursite.com/2019/06/30/模块调研/media/07b0b6098f36e21bdc578fb022ff33a2.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/06/30/模块调研/">
+
+
+
+
+
+  <title> | Wakenforest</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Wakenforest</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Everything happens for the best</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/30/模块调研/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fei Wang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wakenforest">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-30T19:47:21+08:00">
+                2019-06-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="无线通信数据传输模块调研"><a href="#无线通信数据传输模块调研" class="headerlink" title="无线通信数据传输模块调研"></a>无线通信数据传输模块调研</h1><h2 id="一、2G-GPRS模块"><a href="#一、2G-GPRS模块" class="headerlink" title="一、2G/GPRS模块"></a>一、2G/GPRS模块</h2><p>主要是现在使用的MC8331</p>
+<p><img src="media/07b0b6098f36e21bdc578fb022ff33a2.png" alt></p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>尺寸</td>
+<td>44.5×28.5×7.85mm</td>
+</tr>
+<tr>
+<td>频段</td>
+<td>CDMA800MHz</td>
+</tr>
+<tr>
+<td>模式</td>
+<td>CDMA2000 1X</td>
+</tr>
+<tr>
+<td>速率</td>
+<td>153.6Kbps/153.6Kbps (DL/UL)</td>
+</tr>
+<tr>
+<td>接口/封装</td>
+<td>40Pin+10Pin 1.27mm排插</td>
+</tr>
+<tr>
+<td>驱动</td>
+<td>Win2K/XP/Vista/Linux</td>
+</tr>
+<tr>
+<td>指令集</td>
+<td>标准AT命令+/ZTE专有命令</td>
+</tr>
+</tbody></table>
+<h2 id="二、3G工业模块"><a href="#二、3G工业模块" class="headerlink" title="二、3G工业模块"></a>二、3G工业模块</h2><p>MC2716-CDMA2000 EV-DO Rev.A（电信3G）</p>
+<p><img src="media/0f6480fd2ae5d89b561dd4c3530aed78.png" alt></p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>尺寸</td>
+<td>51×30×4.55 mm</td>
+</tr>
+<tr>
+<td>频段</td>
+<td>CDMA800MHz</td>
+</tr>
+<tr>
+<td>模式</td>
+<td>CDMA 2000 1X/EV-DO</td>
+</tr>
+<tr>
+<td>速率</td>
+<td>3.1Mbps/1.8Mbps</td>
+</tr>
+<tr>
+<td>接口/封装</td>
+<td>Mini PCI-E</td>
+</tr>
+<tr>
+<td>驱动</td>
+<td>Windows XP/7/Android2.3/4.0 and later/Linux /WinCE 5.0/6.0</td>
+</tr>
+<tr>
+<td>指令集</td>
+<td>标准AT命令+/ZTE专有命令</td>
+</tr>
+</tbody></table>
+<p>MC2261-CDMA2000（电信3G）</p>
+<p><img src="media/5fa9e29dd9dbcb366b963b5bcd9d973c.png" alt></p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>尺寸</td>
+<td>34.4×30×3.3 mm</td>
+</tr>
+<tr>
+<td>频段</td>
+<td>CDMA800MHz</td>
+</tr>
+<tr>
+<td>模式</td>
+<td>CDMA 2000 1X/EV-DO</td>
+</tr>
+<tr>
+<td>速率</td>
+<td>3.1Mbps/1.8Mbps</td>
+</tr>
+<tr>
+<td>接口/封装</td>
+<td>LCC紧凑型封装</td>
+</tr>
+<tr>
+<td>驱动</td>
+<td>Windows XP/7/Android2.3/4.0 and later/Linux /WinCE 5.0/6.0</td>
+</tr>
+<tr>
+<td>指令集</td>
+<td>标准AT命令+/ZTE专有命令</td>
+</tr>
+</tbody></table>
+<p>MC5610-CDMA2000 1X（电信3G）</p>
+<p><img src="media/773f0fb38d38586172de758581e702a0.png" alt></p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>尺寸</td>
+<td>38.5×33.5×2.9 mm</td>
+</tr>
+<tr>
+<td>频段</td>
+<td>CDMA 1X 450MHz SUB C频段</td>
+</tr>
+<tr>
+<td>模式</td>
+<td>CDMA 2000 1X</td>
+</tr>
+<tr>
+<td>速率</td>
+<td>153.6Kbps/153.6Kbps</td>
+</tr>
+<tr>
+<td>接口/封装</td>
+<td>LCC紧凑型封装，74pin</td>
+</tr>
+<tr>
+<td>驱动</td>
+<td>Windows XP/7/Android2.3/4.0 and later/Linux</td>
+</tr>
+<tr>
+<td>指令集</td>
+<td>标准AT命令+/ZTE专有命令</td>
+</tr>
+</tbody></table>
+<p>MC8635-EV-DO（电信3G）</p>
+<p><img src="media/1f7b272e0db26c380acdc7f81e21ef38.png" alt></p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>尺寸</td>
+<td>30×30×2.4 mm</td>
+</tr>
+<tr>
+<td>频段</td>
+<td>CDMA 2000 EV-DO Rev.A 800MHz</td>
+</tr>
+<tr>
+<td>模式</td>
+<td>CDMA 2000 1X/EV-DO</td>
+</tr>
+<tr>
+<td>速率</td>
+<td>3.1Mbps/1.8Mbps</td>
+</tr>
+<tr>
+<td>接口/封装</td>
+<td>LCC 80Pin</td>
+</tr>
+<tr>
+<td>驱动</td>
+<td>Windows XP/7/Android2.3/4.0 and later/Linux/WinCE 5.0/6.0</td>
+</tr>
+<tr>
+<td>指令集</td>
+<td>标准AT命令+/ZTE专有命令</td>
+</tr>
+</tbody></table>
+<p>MC8618-CDMA2000 1X(电信3G)</p>
+<p><img src="media/d1d78db87c8fea4c2baa3e0e95e287b7.png" alt></p>
+<p>MC8618以其小型化的封装，适用于可穿戴设备等对于模块尺寸有严格要求的应用领域。</p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>尺寸</td>
+<td>20×22×2.0 mm</td>
+</tr>
+<tr>
+<td>频段</td>
+<td>CDMA2000 1X 800MHz</td>
+</tr>
+<tr>
+<td>模式</td>
+<td>CDMA 2000 1X</td>
+</tr>
+<tr>
+<td>速率</td>
+<td>153.6Kbps/153.6Kbps</td>
+</tr>
+<tr>
+<td>接口/封装</td>
+<td>LCC 36Pin</td>
+</tr>
+<tr>
+<td>驱动</td>
+<td>NA</td>
+</tr>
+<tr>
+<td>指令集</td>
+<td>标准AT命令+/ZTE专有命令</td>
+</tr>
+</tbody></table>
+<p>MF206A-UMTS/HSPA(联通3G)</p>
+<p><img src="media/3d8a37697ce14d0600059d9e3e4cee73.png" alt></p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>尺寸</td>
+<td>36×26×2.5 mm</td>
+</tr>
+<tr>
+<td>频段</td>
+<td>V1A，V1B: UMTS B1, B2, B5 GSM/GPRS/EDGE B2, B3, B5, B8</td>
+</tr>
+<tr>
+<td>模式</td>
+<td>UMTS/GSM</td>
+</tr>
+<tr>
+<td>速率</td>
+<td>3.6Mbps/384Kbps</td>
+</tr>
+<tr>
+<td>接口/封装</td>
+<td>LGA 108Pin</td>
+</tr>
+<tr>
+<td>驱动</td>
+<td>Windows XP/7/Android2.3/4.0 and later/Linux/WinCE 5.0/6.0</td>
+</tr>
+<tr>
+<td>指令集</td>
+<td>标准AT命令+/ZTE专有命令</td>
+</tr>
+</tbody></table>
+<p>MC8332 CDMA2000 1X（电信3G）</p>
+<p><img src="media/09e2d89401912baf89264c11d8588131.png" alt></p>
+<p>MC8332CDMA2000<br>1X（电信3G）产品可广泛应用于数据传输、车载信息采集、直放站信息采集、电力抄表、金融POS、医疗信息采集、安防信息采集、环保水利等多个领域。支持双UART口，其中一个为全流控UART口；支持低功耗，支持短信、数据、电话本功能；支持模拟语音功能（可选）+D4；通过了CCC/型号核准/入网证等产品认证。</p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>尺寸</td>
+<td>30.0×25.0×2.68 mm</td>
+</tr>
+<tr>
+<td>频段</td>
+<td>800MHz</td>
+</tr>
+<tr>
+<td>模式</td>
+<td>CDMA2000 1X</td>
+</tr>
+<tr>
+<td>速率</td>
+<td>153.6Kbps/153.6Kbps</td>
+</tr>
+<tr>
+<td>接口/封装</td>
+<td>30pin邮票孔</td>
+</tr>
+<tr>
+<td>驱动</td>
+<td>NA</td>
+</tr>
+<tr>
+<td>指令集</td>
+<td>标准AT命令+/ZTE专有命令</td>
+</tr>
+</tbody></table>
+<h2 id="三、4G工业模块"><a href="#三、4G工业模块" class="headerlink" title="三、4G工业模块"></a>三、4G工业模块</h2><p>ME3760-V2F-LTE TDD（移动4G）</p>
+<p><img src="media/f27b0fba5fef32b6d05eac938fce97a6.png" alt></p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>尺寸</td>
+<td>51×30×5.1 mm</td>
+</tr>
+<tr>
+<td>频段</td>
+<td>LTE-TDD B45/61/59/62 B45/61:1.4G B59/62:1.8G</td>
+</tr>
+<tr>
+<td>模式</td>
+<td>TDD-LTE</td>
+</tr>
+<tr>
+<td>速率</td>
+<td>112Mbps/30Mbps</td>
+</tr>
+<tr>
+<td>接口/封装</td>
+<td>Mini PCI-E</td>
+</tr>
+<tr>
+<td>驱动</td>
+<td>Windows XP/7/Android2.3/4.0 and later/Linux/</td>
+</tr>
+<tr>
+<td>指令集</td>
+<td>标准AT命令+/ZTE专有命令</td>
+</tr>
+</tbody></table>
+<p>ZM8620FDD-LTE/TDD-LTE/UMTS/GSM</p>
+<p><img src="media/e80e6c6e59020baf9995a8ddbf08c681.png" alt></p>
+<p>ZM8620支持100Mbps下行速率和50Mbps上行速率，提供高速可靠的移动宽带数据连接，应用于CPE、无线路由器、网关等行业应用，为无线摄像头、安防、远程医疗等提供可靠的视频传输通道。</p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>尺寸</td>
+<td>51×30×5.1 mm</td>
+</tr>
+<tr>
+<td>频段</td>
+<td>V2C: LTE FDD B1, B2, B4, B5, B7, B8, B12 LTE TDD B38 UMTS B1, B2, B4, B5, B8 GSM B2, B3, B2, B8 V2D: LTE FDD B1, B3, B7, B8, B20 LTE TDD B40 UMTS B1, B2, B5, B8 GSM B2, B3, B2, B8</td>
+</tr>
+<tr>
+<td>模式</td>
+<td>FDD-LTE/TDD-LTE/UMTS/GSM</td>
+</tr>
+<tr>
+<td>速率</td>
+<td>112Mbps/30Mbps</td>
+</tr>
+<tr>
+<td>接口/封装</td>
+<td>Mini PCI-E</td>
+</tr>
+<tr>
+<td>驱动</td>
+<td>Windows XP/7/8/ Android 2.3/4.X/5optional /Linux 2.6.20 and later</td>
+</tr>
+<tr>
+<td>指令集</td>
+<td>标准AT命令+/ZTE专有命令</td>
+</tr>
+</tbody></table>
+<p>ME3860</p>
+<p><img src="media/68135d596aeb485915d4fe4207944fa4.png" alt></p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>尺寸</td>
+<td>36 mm x 26 mm x 2.1 mm</td>
+</tr>
+<tr>
+<td>频段</td>
+<td>LTE TDD: band38,band39,band40,band41 TD-SCDMA: band34,band39 GSM: 900MHz,1800MHz</td>
+</tr>
+<tr>
+<td>模式</td>
+<td>LTE TDD; TD-SCDMA; GSM</td>
+</tr>
+<tr>
+<td>速率</td>
+<td>150Mbps/50Mbps</td>
+</tr>
+<tr>
+<td>接口/封装</td>
+<td>Mini PCI-E</td>
+</tr>
+<tr>
+<td>驱动</td>
+<td>Windows XP/7/8/ Android 2.3/4.X/5optional /Linux 2.6.20 and later</td>
+</tr>
+<tr>
+<td>指令集</td>
+<td>标准AT命令+/ZTE专有命令</td>
+</tr>
+</tbody></table>
+<p>ME3610-LTE Cat.1 模块（4G/3G）</p>
+<p><img src="media/d182ceb533a80112a07044ea1a23ed08.png" alt></p>
+<p>ME3610采用了中兴物联LCC 30*30mm统一封装，支持LTE FDD/EV-DO/CDMA<br>1X制式。ME3610支持LTE<br>Cat.1速率（10Mbps下行速率和5Mbps上行速率），为行业用户提供极具性价比的4G移动通信方案。凭借紧凑封装、工业级温宽以及软硬件可靠性保障，ME3610可广泛应用于智能电表、车载娱乐系统、远程医疗、POS、工业手持设备等多类型行业应用。</p>
+<p>ME3610与ME3630/ME3620/MW3650/MC8635等4G、3G模块完全兼容，用户可根据不同的需求和场景进行选择，快速推出产品。</p>
+<p>* 支持LTE Cat.1速率（10Mbps下行速率和5Mbps上行速率），适用于物联网行业应用</p>
+<p>* 向前兼容支持中国电信CDMA 1X/EV-DO</p>
+<p>* LCC 30*30 统一封装方式，与vLink系列产品完美兼容</p>
+<p>* 支持多种网络协议（PAP、CHAP、PPP）和多种功能（Remote wakeup, MMS, SMS等）</p>
+<p>* 支持标准AT指令集和中兴物联扩展AT指令集</p>
+<p>* 支持WIN XP/7/8、Android、Linux、WinCE、Windows Mobile操作系统</p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>尺寸</td>
+<td>30×30×2.3 mm</td>
+</tr>
+<tr>
+<td>频段</td>
+<td>C2A: LTE FDD: B1/3, CDMA 1X/EV-DO 800MHz</td>
+</tr>
+<tr>
+<td>模式</td>
+<td>FDD-LTE</td>
+</tr>
+<tr>
+<td>速率</td>
+<td>10Mbps/5Mbps</td>
+</tr>
+<tr>
+<td>接口/封装</td>
+<td>LCC 80Pin / 并可兼容支持Mini PCIE封装</td>
+</tr>
+<tr>
+<td>驱动</td>
+<td>Windows XP/7/Android2.3/4.0 and later/Linux/WinCE 5.0/6.0</td>
+</tr>
+<tr>
+<td>指令集</td>
+<td>标准AT命令+/ZTE专有命令</td>
+</tr>
+</tbody></table>
+<p>ME3630</p>
+<p><img src="media/fbe164b1887b2812b2b8fcff2fe1b1a9.png" alt></p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>尺寸</td>
+<td>30×30×2.3 mm</td>
+</tr>
+<tr>
+<td>频段</td>
+<td>七模全网通</td>
+</tr>
+<tr>
+<td>模式</td>
+<td>LTE TDD/LTE FDD/UMTS/TD-SCDMA/CDMA2000 1X/EV-DO/GSM</td>
+</tr>
+<tr>
+<td>速率</td>
+<td>150Mbps/10Mbps</td>
+</tr>
+<tr>
+<td>接口/封装</td>
+<td>LCC / 可兼容支持Mini PCIE与M.2封装</td>
+</tr>
+<tr>
+<td>驱动</td>
+<td>Windows XP/7/Android2.3/4.0 and later/Linux/WinCE 5.0/6.0</td>
+</tr>
+<tr>
+<td>指令集</td>
+<td>标准AT命令+/ZTE专有命令</td>
+</tr>
+</tbody></table>
+<h2 id="四、模块间对比"><a href="#四、模块间对比" class="headerlink" title="四、模块间对比"></a>四、模块间对比</h2><table>
+<thead>
+<tr>
+<th>模块名</th>
+<th>模式</th>
+<th>接口</th>
+<th>价格</th>
+<th>淘宝链接</th>
+<th>付款人</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MC8331</td>
+<td>CDMA2000 1X</td>
+<td>40Pin+10Pin</td>
+<td>14+5</td>
+<td><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.33.6dd04a7cCtnpnO&amp;id=549282488437&amp;ns=1&amp;abbucket=10\#detail" target="_blank" rel="noopener">https://item.taobao.com/item.htm?spm=a230r.1.14.33.6dd04a7cCtnpnO&amp;id=549282488437&amp;ns=1&amp;abbucket=10\#detail</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td>MC2716</td>
+<td>CDMA 2000 1X/EV-DO</td>
+<td>Mini PCI-E</td>
+<td>88+13</td>
+<td><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.1.6e806dbeswOiKS&amp;id=556672627252&amp;ns=1&amp;abbucket=10\#detail" target="_blank" rel="noopener">https://item.taobao.com/item.htm?spm=a230r.1.14.1.6e806dbeswOiKS&amp;id=556672627252&amp;ns=1&amp;abbucket=10\#detail</a></td>
+<td>0</td>
+</tr>
+<tr>
+<td>MC2261</td>
+<td>CDMA 2000 1X/EV-DO</td>
+<td>LCC紧凑型封装</td>
+<td>66+18</td>
+<td><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.1.e839760aejR2fg&amp;id=546789808433&amp;ns=1&amp;abbucket=10\#detail" target="_blank" rel="noopener">https://item.taobao.com/item.htm?spm=a230r.1.14.1.e839760aejR2fg&amp;id=546789808433&amp;ns=1&amp;abbucket=10\#detail</a></td>
+<td>0</td>
+</tr>
+<tr>
+<td>MC5610</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>未找到</td>
+<td>NA</td>
+</tr>
+<tr>
+<td>MC8635</td>
+<td>CDMA 2000 1X/EV-DO</td>
+<td>LCC 80Pin</td>
+<td>125+10</td>
+<td><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.1.e07d77b3M1eLBQ&amp;id=570247313259&amp;ns=1&amp;abbucket=10\#detail" target="_blank" rel="noopener">https://item.taobao.com/item.htm?spm=a230r.1.14.1.e07d77b3M1eLBQ&amp;id=570247313259&amp;ns=1&amp;abbucket=10\#detail</a></td>
+<td>0</td>
+</tr>
+<tr>
+<td>MC8618</td>
+<td>CDMA 2000 1X</td>
+<td>LCC 36Pin</td>
+<td>28+5</td>
+<td><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.1.1f23e9b6Q70ywS&amp;id=549353114890&amp;ns=1&amp;abbucket=10\#detail" target="_blank" rel="noopener">https://item.taobao.com/item.htm?spm=a230r.1.14.1.1f23e9b6Q70ywS&amp;id=549353114890&amp;ns=1&amp;abbucket=10\#detail</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td>MF206A</td>
+<td>UMTS/GSM</td>
+<td>LGA 108Pin</td>
+<td>75+10</td>
+<td><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.1.7fa14b15e9jNV7&amp;id=590749390953&amp;ns=1&amp;abbucket=10\#detail" target="_blank" rel="noopener">https://item.taobao.com/item.htm?spm=a230r.1.14.1.7fa14b15e9jNV7&amp;id=590749390953&amp;ns=1&amp;abbucket=10\#detail</a></td>
+<td>0</td>
+</tr>
+<tr>
+<td>MC8332</td>
+<td>CDMA2000 1X</td>
+<td>30pin邮票孔</td>
+<td>92+10</td>
+<td><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.13.234b4492it5Peu&amp;id=536643450157&amp;ns=1&amp;abbucket=10\#detail" target="_blank" rel="noopener">https://item.taobao.com/item.htm?spm=a230r.1.14.13.234b4492it5Peu&amp;id=536643450157&amp;ns=1&amp;abbucket=10\#detail</a></td>
+<td>0</td>
+</tr>
+<tr>
+<td>ME3760</td>
+<td>LTE-TDD</td>
+<td>Mini PCI-E</td>
+<td>100+10</td>
+<td><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.1.6db76534mq8MuZ&amp;id=547494334352&amp;ns=1&amp;abbucket=10\#detail" target="_blank" rel="noopener">https://item.taobao.com/item.htm?spm=a230r.1.14.1.6db76534mq8MuZ&amp;id=547494334352&amp;ns=1&amp;abbucket=10\#detail</a></td>
+<td>2</td>
+</tr>
+<tr>
+<td>ZM8620</td>
+<td>FDD-LTE/TDD-LTE/UMTS/GSM</td>
+<td>Mini PCI-E</td>
+<td>220+10</td>
+<td><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.13.4d015cd5xXGjWz&amp;id=38625505673&amp;ns=1&amp;abbucket=10\#detail" target="_blank" rel="noopener">https://item.taobao.com/item.htm?spm=a230r.1.14.13.4d015cd5xXGjWz&amp;id=38625505673&amp;ns=1&amp;abbucket=10\#detail</a></td>
+<td>0</td>
+</tr>
+<tr>
+<td>ME3860</td>
+<td>LTE TDD; TD-SCDMA; GSM</td>
+<td>Mini PCI-E</td>
+<td>385+15</td>
+<td><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.19.38377c1dIUiOSR&amp;id=40119731897&amp;ns=1&amp;abbucket=10\#detail" target="_blank" rel="noopener">https://item.taobao.com/item.htm?spm=a230r.1.14.19.38377c1dIUiOSR&amp;id=40119731897&amp;ns=1&amp;abbucket=10\#detail</a></td>
+<td>0</td>
+</tr>
+<tr>
+<td>ME3610</td>
+<td>FDD-LTE</td>
+<td>LCC /M PCI-E</td>
+<td>100+10</td>
+<td><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.1.6ead53c2LiDhgN&amp;id=565338011770&amp;ns=1&amp;abbucket=10\#detail" target="_blank" rel="noopener">https://item.taobao.com/item.htm?spm=a230r.1.14.1.6ead53c2LiDhgN&amp;id=565338011770&amp;ns=1&amp;abbucket=10\#detail</a></td>
+<td>0</td>
+</tr>
+<tr>
+<td>ME3630</td>
+<td>七模全网通</td>
+<td>LCC/M PCI-E /M.2</td>
+<td>125+10</td>
+<td><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.28.6a1171eeHsGZzb&amp;id=578400312094&amp;ns=1&amp;abbucket=10\#detail" target="_blank" rel="noopener">https://item.taobao.com/item.htm?spm=a230r.1.14.28.6a1171eeHsGZzb&amp;id=578400312094&amp;ns=1&amp;abbucket=10\#detail</a></td>
+<td>5</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/27/在云服务器上安装python3并部署blog/" rel="next" title="在云服务器上安装python3并部署blog">
+                <i class="fa fa-chevron-left"></i> 在云服务器上安装python3并部署blog
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Fei Wang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#无线通信数据传输模块调研"><span class="nav-number">1.</span> <span class="nav-text">无线通信数据传输模块调研</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、2G-GPRS模块"><span class="nav-number">1.1.</span> <span class="nav-text">一、2G/GPRS模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、3G工业模块"><span class="nav-number">1.2.</span> <span class="nav-text">二、3G工业模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、4G工业模块"><span class="nav-number">1.3.</span> <span class="nav-text">三、4G工业模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、模块间对比"><span class="nav-number">1.4.</span> <span class="nav-text">四、模块间对比</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fei Wang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
