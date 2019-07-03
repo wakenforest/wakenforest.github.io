@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="无线通信,调研,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="###一、华为ME909s-821    特性 参数    尺寸 30 mm x 30 mm x 2.57 mm   模式 LTE-TDD/LTE-FDD/HSPA+/TD-SCDMA/EVDO和GSM/GPRS/EDGE   速率 DC-HSPA+ : 下行:42 Mbps, 上行: 5.76 Mbps LTE TDD : 下行: 112Mbps , 上行: 10Mbps (CAT4) LTE">
+<meta name="keywords" content="无线通信,调研">
+<meta property="og:type" content="article">
+<meta property="og:title" content="4G无线通信模块调研">
+<meta property="og:url" content="http://yoursite.com/2019/07/03/4G无线通信模块调研/index.html">
+<meta property="og:site_name" content="Wakenforest">
+<meta property="og:description" content="###一、华为ME909s-821    特性 参数    尺寸 30 mm x 30 mm x 2.57 mm   模式 LTE-TDD/LTE-FDD/HSPA+/TD-SCDMA/EVDO和GSM/GPRS/EDGE   速率 DC-HSPA+ : 下行:42 Mbps, 上行: 5.76 Mbps LTE TDD : 下行: 112Mbps , 上行: 10Mbps (CAT4) LTE">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-03T15:59:32.072Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="4G无线通信模块调研">
+<meta name="twitter:description" content="###一、华为ME909s-821    特性 参数    尺寸 30 mm x 30 mm x 2.57 mm   模式 LTE-TDD/LTE-FDD/HSPA+/TD-SCDMA/EVDO和GSM/GPRS/EDGE   速率 DC-HSPA+ : 下行:42 Mbps, 上行: 5.76 Mbps LTE TDD : 下行: 112Mbps , 上行: 10Mbps (CAT4) LTE">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/07/03/4G无线通信模块调研/">
+
+
+
+
+
+  <title>4G无线通信模块调研 | Wakenforest</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Wakenforest</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Everything happens for the best</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/03/4G无线通信模块调研/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fei Wang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wakenforest">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">4G无线通信模块调研</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-03T23:50:00+08:00">
+                2019-07-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="一、华为"><a href="#一、华为" class="headerlink" title="###一、华为"></a>###一、华为</h2><p>ME909s-821</p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>尺寸</td>
+<td>30 mm x 30 mm x 2.57 mm</td>
+</tr>
+<tr>
+<td>模式</td>
+<td>LTE-TDD/LTE-FDD/HSPA+/TD-SCDMA/EVDO和GSM/GPRS/EDGE</td>
+</tr>
+<tr>
+<td>速率</td>
+<td>DC-HSPA+ : 下行:42 Mbps, 上行: 5.76 Mbps LTE TDD : 下行: 112Mbps , 上行: 10Mbps (CAT4) LTE FDD: 下行:150 Mbps, 上行: 50 Mbps @Bandwidth 20M (CAT4)</td>
+</tr>
+<tr>
+<td>接口/封装</td>
+<td>贴片/有M PCI-E的变形版本</td>
+</tr>
+<tr>
+<td>驱动</td>
+<td>Linux, Android, WinCE, Windows 8/10</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="二、SIMCOM（芯讯通）"><a href="#二、SIMCOM（芯讯通）" class="headerlink" title="###二、SIMCOM（芯讯通）"></a>###二、SIMCOM（芯讯通）</h2><p>SIM7600CE（LTE CAT-4模组）</p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>尺寸</td>
+<td>30*30*2.9mm</td>
+</tr>
+<tr>
+<td>模式</td>
+<td>LTE-TDD/LTE-FDD/HSPA+/TD-SCDMA/EVDO和GSM/GPRS/EDGE</td>
+</tr>
+<tr>
+<td>速率</td>
+<td>DC-HSPA+ : 下行:42 Mbps, 上行: 5.76 Mbps LTE FDD: 下行:150 Mbps, 上行: 50 Mbps @Bandwidth 20M (CAT4)</td>
+</tr>
+<tr>
+<td>接口/封装</td>
+<td>LGA/M PCI-E</td>
+</tr>
+<tr>
+<td>驱动</td>
+<td>Linux, Android, WinCE, Windows</td>
+</tr>
+</tbody></table>
+<p>SIM7500CE（LTE CAT-1模组）</p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>尺寸</td>
+<td>30*30*2.9mm</td>
+</tr>
+<tr>
+<td>模式</td>
+<td>LTE-FDD B1/B3/B5</td>
+</tr>
+<tr>
+<td>速率</td>
+<td>LTE CAT1-上行最大速率：5Mbps, -下行最大速率：10Mbps</td>
+</tr>
+<tr>
+<td>接口/封装</td>
+<td>LGA/M PCI-E</td>
+</tr>
+<tr>
+<td>驱动</td>
+<td>Linux, Android, WinCE, Windows</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="三、龙尚"><a href="#三、龙尚" class="headerlink" title="###三、龙尚"></a>###三、龙尚</h2><p>U9507</p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>尺寸</td>
+<td>31.0mm×30.0mm×2.4mm</td>
+</tr>
+<tr>
+<td>模式</td>
+<td>LTE-TDD 五频 Band 34/38/39/40/41 LTE-FDD 四频 Band 1/3/5/8 UMTS 四频 Band 1/3/5/8 GSM 双频 Band 3/8</td>
+</tr>
+<tr>
+<td>速率</td>
+<td>LTE FDD: 下行:150 Mbps, 上行: 50 Mbps</td>
+</tr>
+<tr>
+<td>接口/封装</td>
+<td>LCC+LGA</td>
+</tr>
+<tr>
+<td>驱动</td>
+<td>Linux, Android, WinCE, Windows</td>
+</tr>
+</tbody></table>
+<p>U9300C</p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>尺寸</td>
+<td>31.0mm×30.0mm×2.4mm</td>
+</tr>
+<tr>
+<td>模式</td>
+<td>LTE-TDD 四频 Band 38/39/40/41 LTE-FDD 四频 Band 1/3/5/8 TD-SCDMA 双频 Band 34/39 UMTS 双频 Band 1/8 EVDO 单频 BC0 CDMA1x 单频 BC0 GSM 三频 Band 3/5/8</td>
+</tr>
+<tr>
+<td>速率</td>
+<td>LTE FDD: 下行:150 Mbps, 上行: 50 Mbps</td>
+</tr>
+<tr>
+<td>接口/封装</td>
+<td>LCC+LGA</td>
+</tr>
+<tr>
+<td>驱动</td>
+<td>Linux, Android, WinCE, Windows</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="四、移远"><a href="#四、移远" class="headerlink" title="###四、移远"></a>###四、移远</h2><p>EC21</p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>尺寸</td>
+<td>32.0 x 29.0 x 2.4mm</td>
+</tr>
+<tr>
+<td>模式</td>
+<td>FDD LTE向下兼容</td>
+</tr>
+<tr>
+<td>速率</td>
+<td>LTE FDD: 下行:10 Mbps, 上行: 5 Mbps （LTE CAT-1）</td>
+</tr>
+<tr>
+<td>接口/封装</td>
+<td>LCC</td>
+</tr>
+<tr>
+<td>驱动</td>
+<td>Linux, Android, WinCE, Windows</td>
+</tr>
+</tbody></table>
+<p>EC20</p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>尺寸</td>
+<td>32.0 × 29.0 × 2.4mm</td>
+</tr>
+<tr>
+<td>模式</td>
+<td>FDD LTE向下兼容</td>
+</tr>
+<tr>
+<td>速率</td>
+<td>LTE FDD: 下行:100 Mbps, 上行: 50Mbps （LTE CAT-4）</td>
+</tr>
+<tr>
+<td>接口/封装</td>
+<td>LCC</td>
+</tr>
+<tr>
+<td>驱动</td>
+<td>Linux, Android, WinCE, Windows</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="五、广和通"><a href="#五、广和通" class="headerlink" title="###五、广和通"></a>###五、广和通</h2><p>L850-GL</p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>尺寸</td>
+<td>42.00 x 30.00 x 2.30</td>
+</tr>
+<tr>
+<td>模式</td>
+<td>LTE FDD:B1/B2/B3/B4/B5/B7/B8/B11/B12/B13/B17/B18/B19/B20/B21/B26/B28/B29/B30/B66 LTE TDD:B38/B39/B40/B41 WCDMA:B1/B2/B4/B5/B8</td>
+</tr>
+<tr>
+<td>速率</td>
+<td>LTE FDD(Mbps):450(DL)/50(UL) (Cat-9) LTE TDD(Mbps):347(DL)30(UL)(Cat-9)</td>
+</tr>
+<tr>
+<td>接口/封装</td>
+<td>M.2</td>
+</tr>
+<tr>
+<td>驱动</td>
+<td>Win10/Android*/Linux/Chrome OS</td>
+</tr>
+</tbody></table>
+<p>NL668</p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>尺寸</td>
+<td>29.00 x 32.00 x 2.40</td>
+</tr>
+<tr>
+<td>模式</td>
+<td>LTE FDD:B1/B3/B5/B8 LTE TDD:B38/B39/B40/B41 WCDMA:B1/B8 TD-SCDMA:B34/B39 EVD0:BC0 CDMA2000 1X:BC0 GSM/GPRS/EDGE:900/1800MHz</td>
+</tr>
+<tr>
+<td>速率</td>
+<td>LTE FDD(Mbps):150(DL)/50(UL) (Cat-4) LTE TDD(Mbps):130(DL)/35(UL) (Cat-4)</td>
+</tr>
+<tr>
+<td>接口/封装</td>
+<td>LCC</td>
+</tr>
+<tr>
+<td>驱动</td>
+<td>Win10/Android*/Linux/Chrome OS</td>
+</tr>
+</tbody></table>
+<p>L830</p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>尺寸</td>
+<td>42.00 x 30.00 x 2.30</td>
+</tr>
+<tr>
+<td>模式</td>
+<td>LTE FDD:B1/B3/B8 LTE TDD:B38/B39/B40/B41 WCDMA:B1/B8</td>
+</tr>
+<tr>
+<td>速率</td>
+<td>LTE FDD(Mbps):300(DL)/50(UL) (Cat6) LTE TDD(Mbps):112(DL)/10(UL)(Cat4)</td>
+</tr>
+<tr>
+<td>接口/封装</td>
+<td>M.2</td>
+</tr>
+<tr>
+<td>驱动</td>
+<td>Win10/Android*/Linux/Chrome OS</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="淘宝模块价格"><a href="#淘宝模块价格" class="headerlink" title="###淘宝模块价格"></a>###淘宝模块价格</h2><table>
+<thead>
+<tr>
+<th>型号</th>
+<th>厂商</th>
+<th>制式</th>
+<th>淘宝链接</th>
+<th>价格</th>
+<th>月销量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ME909s-821</td>
+<td>华为</td>
+<td>CAT4</td>
+<td><a href="https://item.taobao.com/item.htm?id=569633907999&amp;ali\_refid=a3\_430582\_1006:1121642715:N:pcAsYOWd54OvywRCrtHn4g%3D%3D:e3d53dfde958eecd29d2ebd96274d732&amp;ali\_trackid=1\_e3d53dfde958eecd29d2ebd96274d732&amp;spm=a230r.1.14.1\#detail" target="_blank" rel="noopener">https://item.taobao.com/item.htm?id=569633907999&amp;ali\_refid=a3\_430582\_1006:1121642715:N:pcAsYOWd54OvywRCrtHn4g%3D%3D:e3d53dfde958eecd29d2ebd96274d732&amp;ali\_trackid=1\_e3d53dfde958eecd29d2ebd96274d732&amp;spm=a230r.1.14.1\#detail</a></td>
+<td>165+23</td>
+<td>68</td>
+</tr>
+<tr>
+<td>SIM7600CE</td>
+<td>SIMCOM</td>
+<td>CAT4</td>
+<td><a href="https://detail.tmall.com/item.htm?spm=a230r.1.14.1.3e683fd3T1ldZh&amp;id=577817680299&amp;cm\_id=140105335569ed55e27b&amp;abbucket=10&amp;skuId=4220896499819" target="_blank" rel="noopener">https://detail.tmall.com/item.htm?spm=a230r.1.14.1.3e683fd3T1ldZh&amp;id=577817680299&amp;cm\_id=140105335569ed55e27b&amp;abbucket=10&amp;skuId=4220896499819</a></td>
+<td>150+0</td>
+<td>89</td>
+</tr>
+<tr>
+<td>SIM7500CE</td>
+<td>SIMCOM</td>
+<td>CAT1</td>
+<td><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.1.2e493c90FXX9Iu&amp;id=593568618321&amp;ns=1&amp;abbucket=10\#detail" target="_blank" rel="noopener">https://item.taobao.com/item.htm?spm=a230r.1.14.1.2e493c90FXX9Iu&amp;id=593568618321&amp;ns=1&amp;abbucket=10\#detail</a></td>
+<td>180+8</td>
+<td>0</td>
+</tr>
+<tr>
+<td>U9507</td>
+<td>龙尚</td>
+<td>CAT4</td>
+<td><a href="https://detail.tmall.com/item.htm?spm=a230r.1.14.1.1acea3516qKoGK&amp;id=577395515380&amp;cm\_id=140105335569ed55e27b&amp;abbucket=10" target="_blank" rel="noopener">https://detail.tmall.com/item.htm?spm=a230r.1.14.1.1acea3516qKoGK&amp;id=577395515380&amp;cm\_id=140105335569ed55e27b&amp;abbucket=10</a></td>
+<td>130+15</td>
+<td>1</td>
+</tr>
+<tr>
+<td>U9300C</td>
+<td>龙尚</td>
+<td>CAT4</td>
+<td><a href="https://detail.tmall.com/item.htm?spm=a1z10.3-b.w4011-18900435753.33.5d5653d0YLUv7v&amp;id=577318303338&amp;rn=fd3f675015efda1270cc26f4c5a7d2ad&amp;abbucket=11&amp;skuId=4017556895150" target="_blank" rel="noopener">https://detail.tmall.com/item.htm?spm=a1z10.3-b.w4011-18900435753.33.5d5653d0YLUv7v&amp;id=577318303338&amp;rn=fd3f675015efda1270cc26f4c5a7d2ad&amp;abbucket=11&amp;skuId=4017556895150</a></td>
+<td>150+15</td>
+<td>31</td>
+</tr>
+<tr>
+<td>EC21</td>
+<td>移远</td>
+<td>CAT1</td>
+<td><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.28.7c451837k32DlD&amp;id=558151883244&amp;ns=1&amp;abbucket=10\#detail" target="_blank" rel="noopener">https://item.taobao.com/item.htm?spm=a230r.1.14.28.7c451837k32DlD&amp;id=558151883244&amp;ns=1&amp;abbucket=10\#detail</a></td>
+<td>210+8</td>
+<td>0</td>
+</tr>
+<tr>
+<td>EC20</td>
+<td>移远</td>
+<td>CAT4</td>
+<td><a href="https://detail.tmall.com/item.htm?spm=a1z10.5-b.w4011-18934517036.35.456ba48ePvyqRG&amp;id=577503221854&amp;rn=aa5bddf7658217a176808b4555f11b05&amp;abbucket=11" target="_blank" rel="noopener">https://detail.tmall.com/item.htm?spm=a1z10.5-b.w4011-18934517036.35.456ba48ePvyqRG&amp;id=577503221854&amp;rn=aa5bddf7658217a176808b4555f11b05&amp;abbucket=11</a></td>
+<td>200+0</td>
+<td>31</td>
+</tr>
+<tr>
+<td>L850-GL</td>
+<td>广和通</td>
+<td>CAT9</td>
+<td><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.1.3c5b183bEuAuCd&amp;id=593309695527&amp;ns=1&amp;abbucket=10\#detail" target="_blank" rel="noopener">https://item.taobao.com/item.htm?spm=a230r.1.14.1.3c5b183bEuAuCd&amp;id=593309695527&amp;ns=1&amp;abbucket=10\#detail</a></td>
+<td>1150+0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>NL668</td>
+<td>广和通</td>
+<td>CAT4</td>
+<td><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.13.5f0cc378VMptar&amp;id=585044242367&amp;ns=1&amp;abbucket=10\#detail" target="_blank" rel="noopener">https://item.taobao.com/item.htm?spm=a230r.1.14.13.5f0cc378VMptar&amp;id=585044242367&amp;ns=1&amp;abbucket=10\#detail</a></td>
+<td>185+8</td>
+<td>0</td>
+</tr>
+<tr>
+<td>L830</td>
+<td>广和通</td>
+<td>CAT6</td>
+<td><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.8.65f6651585EHlz&amp;id=591221291491&amp;ns=1&amp;abbucket=10\#detail" target="_blank" rel="noopener">https://item.taobao.com/item.htm?spm=a230r.1.14.8.65f6651585EHlz&amp;id=591221291491&amp;ns=1&amp;abbucket=10\#detail</a></td>
+<td>120+10</td>
+<td>0</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/无线通信/" rel="tag"># 无线通信</a>
+          
+            <a href="/tags/调研/" rel="tag"># 调研</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/30/模块调研/" rel="next" title="无线通信数据传输模块调研">
+                <i class="fa fa-chevron-left"></i> 无线通信数据传输模块调研
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Fei Wang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、华为"><span class="nav-number">1.</span> <span class="nav-text">###一、华为</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、SIMCOM（芯讯通）"><span class="nav-number">2.</span> <span class="nav-text">###二、SIMCOM（芯讯通）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、龙尚"><span class="nav-number">3.</span> <span class="nav-text">###三、龙尚</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、移远"><span class="nav-number">4.</span> <span class="nav-text">###四、移远</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、广和通"><span class="nav-number">5.</span> <span class="nav-text">###五、广和通</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#淘宝模块价格"><span class="nav-number">6.</span> <span class="nav-text">###淘宝模块价格</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fei Wang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
