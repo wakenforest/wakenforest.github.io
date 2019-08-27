@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="数据库,mongodb,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="mongodb数据库基础1 查询mongodb数据库进入mongodb数据库目录，本机为：“C:\Program Files\MongoDB\Server\4.0\bin” 输入mongo，可以进入mongodb shell操作。 1.1 查询mongodb数据库1show dbs;  查询所有mongodb数据库。下面为示例查询结果： 12345admin          0.000GBcon">
+<meta name="keywords" content="数据库,mongodb">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NHK 2019-08-27">
+<meta property="og:url" content="http://yoursite.com/2019/08/27/mongodb基础/index.html">
+<meta property="og:site_name" content="Wakenforest">
+<meta property="og:description" content="mongodb数据库基础1 查询mongodb数据库进入mongodb数据库目录，本机为：“C:\Program Files\MongoDB\Server\4.0\bin” 输入mongo，可以进入mongodb shell操作。 1.1 查询mongodb数据库1show dbs;  查询所有mongodb数据库。下面为示例查询结果： 12345admin          0.000GBcon">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-27T07:55:46.788Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NHK 2019-08-27">
+<meta name="twitter:description" content="mongodb数据库基础1 查询mongodb数据库进入mongodb数据库目录，本机为：“C:\Program Files\MongoDB\Server\4.0\bin” 输入mongo，可以进入mongodb shell操作。 1.1 查询mongodb数据库1show dbs;  查询所有mongodb数据库。下面为示例查询结果： 12345admin          0.000GBcon">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/08/27/mongodb基础/">
+
+
+
+
+
+  <title>NHK 2019-08-27 | Wakenforest</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Wakenforest</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Everything happens for the best</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/27/mongodb基础/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fei Wang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wakenforest">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">NHK 2019-08-27</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-27T15:55:00+08:00">
+                2019-08-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="mongodb数据库基础"><a href="#mongodb数据库基础" class="headerlink" title="mongodb数据库基础"></a>mongodb数据库基础</h1><h2 id="1-查询mongodb数据库"><a href="#1-查询mongodb数据库" class="headerlink" title="1 查询mongodb数据库"></a>1 查询mongodb数据库</h2><p>进入mongodb数据库目录，本机为：“C:\Program Files\MongoDB\Server\4.0\bin”</p>
+<p>输入mongo，可以进入mongodb shell操作。</p>
+<h3 id="1-1-查询mongodb数据库"><a href="#1-1-查询mongodb数据库" class="headerlink" title="1.1 查询mongodb数据库"></a>1.1 查询mongodb数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show dbs;</span><br></pre></td></tr></table></figure>
+
+<p>查询所有mongodb数据库。<br>下面为示例查询结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">admin          0.000GB</span><br><span class="line">config         0.000GB</span><br><span class="line">iflashbuy_log  0.000GB</span><br><span class="line">local          0.000GB</span><br><span class="line">test           0.000GB</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-选择数据库"><a href="#1-2-选择数据库" class="headerlink" title="1.2 选择数据库"></a>1.2 选择数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use iflashbuy_log</span><br></pre></td></tr></table></figure>
+
+<p>选择对应的数据库，执行成功后显示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">switched to db iflashbuy_log</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3-选择collections"><a href="#1-3-选择collections" class="headerlink" title="1.3 选择collections"></a>1.3 选择collections</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show collections;</span><br></pre></td></tr></table></figure>
+
+<p>可以显示当前数据库中的collections。当前的collections为area。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.stats();</span><br></pre></td></tr></table></figure>
+
+<p>可以查询当前数据库的状态。查询结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">        &quot;db&quot; : &quot;iflashbuy_log&quot;,</span><br><span class="line">        &quot;collections&quot; : 1,</span><br><span class="line">        &quot;views&quot; : 0,</span><br><span class="line">        &quot;objects&quot; : 10,</span><br><span class="line">        &quot;avgObjSize&quot; : 41,</span><br><span class="line">        &quot;dataSize&quot; : 410,</span><br><span class="line">        &quot;storageSize&quot; : 16384,</span><br><span class="line">        &quot;numExtents&quot; : 0,</span><br><span class="line">        &quot;indexes&quot; : 1,</span><br><span class="line">        &quot;indexSize&quot; : 16384,</span><br><span class="line">        &quot;fsUsedSize&quot; : 203708231680,</span><br><span class="line">        &quot;fsTotalSize&quot; : 254049677312,</span><br><span class="line">        &quot;ok&quot; : 1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-4-查询全部记录"><a href="#1-4-查询全部记录" class="headerlink" title="1.4 查询全部记录"></a>1.4 查询全部记录</h3><p>查询某个collections的所有数据记录：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.area.find();</span><br></pre></td></tr></table></figure>
+
+<p>查询结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123; &quot;_id&quot; : ObjectId(&quot;5d64cd36336f1f2b0193feee&quot;), &quot;id&quot; : 1, &quot;value&quot; : 11111 &#125;</span><br><span class="line">&#123; &quot;_id&quot; : ObjectId(&quot;5d64cd36336f1f2b0193feef&quot;), &quot;id&quot; : 2, &quot;value&quot; : 22222 &#125;</span><br><span class="line">&#123; &quot;_id&quot; : ObjectId(&quot;5d64cd36336f1f2b0193fef0&quot;), &quot;id&quot; : 4, &quot;value&quot; : 44444 &#125;</span><br><span class="line">&#123; &quot;_id&quot; : ObjectId(&quot;5d64cd36336f1f2b0193fef1&quot;), &quot;id&quot; : 3, &quot;value&quot; : 33333 &#125;</span><br><span class="line">&#123; &quot;_id&quot; : ObjectId(&quot;5d64cd36336f1f2b0193fef2&quot;), &quot;id&quot; : 5, &quot;value&quot; : 55555 &#125;</span><br><span class="line">&#123; &quot;_id&quot; : ObjectId(&quot;5d64cd36336f1f2b0193fef3&quot;), &quot;id&quot; : 6, &quot;value&quot; : 66666 &#125;</span><br><span class="line">&#123; &quot;_id&quot; : ObjectId(&quot;5d64cd36336f1f2b0193fef4&quot;), &quot;id&quot; : 7, &quot;value&quot; : 77777 &#125;</span><br><span class="line">&#123; &quot;_id&quot; : ObjectId(&quot;5d64cd36336f1f2b0193fef5&quot;), &quot;id&quot; : 8, &quot;value&quot; : 88888 &#125;</span><br><span class="line">&#123; &quot;_id&quot; : ObjectId(&quot;5d64cd36336f1f2b0193fef6&quot;), &quot;id&quot; : 9, &quot;value&quot; : 99999 &#125;</span><br><span class="line">&#123; &quot;_id&quot; : ObjectId(&quot;5d64cd36336f1f2b0193fef7&quot;), &quot;id&quot; : 10, &quot;value&quot; : 111110 &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-5-条件查询记录"><a href="#1-5-条件查询记录" class="headerlink" title="1.5 条件查询记录"></a>1.5 条件查询记录</h3><p>(1) 查询value==33333的记录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.area.find(&#123;&apos;value&apos;:33333&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>(2) 查询id==1的记录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.area.find(&#123;&apos;id&apos;:1&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>(3) 查询value&gt;22222的记录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.area.find(&#123;value: &#123;$gt:22222&#125;&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>(4) 查询value中包含 mongo的数据,这里mongo是字符串，由于本例中value数据全部为数值，因此不可能查到。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.area.find(&#123;value: /mongo/&#125;);</span><br><span class="line">//相当于%%</span><br><span class="line">select * from area where name like ‘%mongo%’;</span><br></pre></td></tr></table></figure>
+
+<p>(5) 按照value升降序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">db.area.find().sort(&#123;value:1&#125;)   // 升序</span><br><span class="line">db.area.find().sort(&#123;value:-1&#125;) // 降序</span><br></pre></td></tr></table></figure>
+
+<p>(6) 查询id==1，且value==11111的数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.area.find(&#123;id:1, value:11111&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>(7) 查询前5条数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.area.find().limit(5);</span><br></pre></td></tr></table></figure>
+
+<p>相当于：selecttop 5 * from area;</p>
+<p>(8) 查询10条以后的数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.area.find().skip(10);</span><br></pre></td></tr></table></figure>
+
+<p>相当于：<br>select * from area where id not in (<br>selecttop 10 * from userInfo<br>);</p>
+<p>(9) 查询在5-10之间的数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.area.find().limit(10).skip(5);</span><br></pre></td></tr></table></figure>
+
+<p>可用于分页，limit是pageSize，skip是第几页*pageSize</p>
+<p>(10) or与 查询</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.area.find(&#123;$or: [&#123;value: 22222&#125;, &#123;value: 55555&#125;]&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>相当于：select * from area where value = 22222 or value = 55555;</p>
+<p>(11) 计数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.area.find(&#123;$or: [&#123;value: 22222&#125;, &#123;value: 55555&#125;]&#125;).count();</span><br></pre></td></tr></table></figure>
+
+<p>(12) 选择某列的数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; db.area.find(&#123;&#125;,&#123;id:1&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>{ “_id” : ObjectId(“5d64cd36336f1f2b0193feee”), “id” : 1 }<br>{ “_id” : ObjectId(“5d64cd36336f1f2b0193feef”), “id” : 2 }<br>{ “_id” : ObjectId(“5d64cd36336f1f2b0193fef0”), “id” : 4 }<br>{ “_id” : ObjectId(“5d64cd36336f1f2b0193fef1”), “id” : 3 }<br>{ “_id” : ObjectId(“5d64cd36336f1f2b0193fef2”), “id” : 5 }<br>{ “_id” : ObjectId(“5d64cd36336f1f2b0193fef3”), “id” : 6 }<br>{ “_id” : ObjectId(“5d64cd36336f1f2b0193fef4”), “id” : 7 }<br>{ “_id” : ObjectId(“5d64cd36336f1f2b0193fef5”), “id” : 8 }<br>{ “_id” : ObjectId(“5d64cd36336f1f2b0193fef6”), “id” : 9 }<br>{ “_id” : ObjectId(“5d64cd36336f1f2b0193fef7”), “id” : 10 }</p>
+<p>(13) 选择某列之外的数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; db.area.find(&#123;&#125;,&#123;id:0&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>{ “_id” : ObjectId(“5d64cd36336f1f2b0193feee”), “value” : 11111 }<br>{ “_id” : ObjectId(“5d64cd36336f1f2b0193feef”), “value” : 22222 }<br>{ “_id” : ObjectId(“5d64cd36336f1f2b0193fef0”), “value” : 44444 }<br>{ “_id” : ObjectId(“5d64cd36336f1f2b0193fef1”), “value” : 33333 }<br>{ “_id” : ObjectId(“5d64cd36336f1f2b0193fef2”), “value” : 55555 }<br>{ “_id” : ObjectId(“5d64cd36336f1f2b0193fef3”), “value” : 66666 }<br>{ “_id” : ObjectId(“5d64cd36336f1f2b0193fef4”), “value” : 77777 }<br>{ “_id” : ObjectId(“5d64cd36336f1f2b0193fef5”), “value” : 88888 }<br>{ “_id” : ObjectId(“5d64cd36336f1f2b0193fef6”), “value” : 99999 }<br>{ “_id” : ObjectId(“5d64cd36336f1f2b0193fef7”), “value” : 111110 }</p>
+<p>详细操作，参考：<br><a href="https://www.cnblogs.com/TankMa/archive/2011/06/08/2074947.html" target="_blank" rel="noopener">https://www.cnblogs.com/TankMa/archive/2011/06/08/2074947.html</a></p>
+<h2 id="2-mongodb导入导出CSV文件"><a href="#2-mongodb导入导出CSV文件" class="headerlink" title="2 mongodb导入导出CSV文件"></a>2 mongodb导入导出CSV文件</h2><p>打开cmd，先cd到mongodb目录。</p>
+<h3 id="2-1-将csv文件导入mongodb"><a href="#2-1-将csv文件导入mongodb" class="headerlink" title="2.1 将csv文件导入mongodb"></a>2.1 将csv文件导入mongodb</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongoimport -d iflashbuy_log -c area --type csv --headerline --file C:\Users\waken\Desktop\pysim\mongodb_test\database_mongo.csv</span><br></pre></td></tr></table></figure>
+
+<p>iflashbuy_log为数据库名；<br>are 为 collections名；<br>csv 为 文件类型；<br>–headerline表示第一列为headerline；<br>–file为路径+文件名。</p>
+<h3 id="2-2-将mongodb导出为csv文件"><a href="#2-2-将mongodb导出为csv文件" class="headerlink" title="2.2 将mongodb导出为csv文件"></a>2.2 将mongodb导出为csv文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongoexport -d iflashbuy_log -c area  --csv -f value -o c:\area.dat</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongoexport -d iflashbuy_log -c area  --csv -f id,value -o c:\area1.csv</span><br></pre></td></tr></table></figure>
+
+<p>-f 为要导出的列。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据库/" rel="tag"># 数据库</a>
+          
+            <a href="/tags/mongodb/" rel="tag"># mongodb</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/22/[NHK]20190822/" rel="next" title="NHK 2019-08-22">
+                <i class="fa fa-chevron-left"></i> NHK 2019-08-22
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Fei Wang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#mongodb数据库基础"><span class="nav-number">1.</span> <span class="nav-text">mongodb数据库基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-查询mongodb数据库"><span class="nav-number">1.1.</span> <span class="nav-text">1 查询mongodb数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-查询mongodb数据库"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1 查询mongodb数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-选择数据库"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2 选择数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-选择collections"><span class="nav-number">1.1.3.</span> <span class="nav-text">1.3 选择collections</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-查询全部记录"><span class="nav-number">1.1.4.</span> <span class="nav-text">1.4 查询全部记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-条件查询记录"><span class="nav-number">1.1.5.</span> <span class="nav-text">1.5 条件查询记录</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-mongodb导入导出CSV文件"><span class="nav-number">1.2.</span> <span class="nav-text">2 mongodb导入导出CSV文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-将csv文件导入mongodb"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.1 将csv文件导入mongodb</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-将mongodb导出为csv文件"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.2 将mongodb导出为csv文件</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fei Wang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
