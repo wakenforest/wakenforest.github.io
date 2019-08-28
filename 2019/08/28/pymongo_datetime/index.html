@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="pymongo基础主要是数据查询 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758import pymongomyclient = pymongo.MongoClient(&amp;quot;mongodb://localhost:27017">
+<meta name="description" content="pymongo操作datetime，并用matplotlib画图从csv导入mongo的time数据，会被转为string类型，在mongo shell里可以用下面的方式修改。其中，Date为时间字段名。 12345db.data.find().forEach(function(doc)&amp;#123;	doc.Date=new Date(doc.Date);	db.data.save(doc);&amp;#">
 <meta name="keywords" content="数据库,mongodb">
 <meta property="og:type" content="article">
-<meta property="og:title" content="pymongo查询">
-<meta property="og:url" content="http://yoursite.com/2019/08/27/pymongo基础/index.html">
+<meta property="og:title" content="mongo datetime类型及操作">
+<meta property="og:url" content="http://yoursite.com/2019/08/28/pymongo_datetime/index.html">
 <meta property="og:site_name" content="Wakenforest">
-<meta property="og:description" content="pymongo基础主要是数据查询 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758import pymongomyclient = pymongo.MongoClient(&amp;quot;mongodb://localhost:27017">
+<meta property="og:description" content="pymongo操作datetime，并用matplotlib画图从csv导入mongo的time数据，会被转为string类型，在mongo shell里可以用下面的方式修改。其中，Date为时间字段名。 12345db.data.find().forEach(function(doc)&amp;#123;	doc.Date=new Date(doc.Date);	db.data.save(doc);&amp;#">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-27T12:15:56.495Z">
+<meta property="og:updated_time" content="2019-08-28T08:20:28.869Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="pymongo查询">
-<meta name="twitter:description" content="pymongo基础主要是数据查询 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758import pymongomyclient = pymongo.MongoClient(&amp;quot;mongodb://localhost:27017">
+<meta name="twitter:title" content="mongo datetime类型及操作">
+<meta name="twitter:description" content="pymongo操作datetime，并用matplotlib画图从csv导入mongo的time数据，会被转为string类型，在mongo shell里可以用下面的方式修改。其中，Date为时间字段名。 12345db.data.find().forEach(function(doc)&amp;#123;	doc.Date=new Date(doc.Date);	db.data.save(doc);&amp;#">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/08/27/pymongo基础/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/28/pymongo_datetime/">
 
 
 
 
 
-  <title>pymongo查询 | Wakenforest</title>
+  <title>mongo datetime类型及操作 | Wakenforest</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/27/pymongo基础/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/28/pymongo_datetime/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fei Wang">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">pymongo查询</h1>
+          <h1 class="post-title" itemprop="name headline">mongo datetime类型及操作</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-27T20:15:00+08:00">
-                2019-08-27
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-28T16:20:00+08:00">
+                2019-08-28
               </time>
             
 
@@ -352,8 +352,11 @@
       
 
       
-        <h1 id="pymongo基础"><a href="#pymongo基础" class="headerlink" title="pymongo基础"></a>pymongo基础</h1><p>主要是数据查询</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">import pymongo</span><br><span class="line"></span><br><span class="line">myclient = pymongo.MongoClient(&quot;mongodb://localhost:27017/&quot;)</span><br><span class="line">dblist = myclient.list_database_names()</span><br><span class="line">print(dblist)</span><br><span class="line"></span><br><span class="line">mydb = myclient[&apos;iflashbuy_log&apos;]</span><br><span class="line">collist = mydb.list_collection_names()</span><br><span class="line">print(collist)</span><br><span class="line"></span><br><span class="line"># 查找一条记录</span><br><span class="line">mycol = mydb[&quot;area&quot;]</span><br><span class="line">x = mycol.find_one()</span><br><span class="line">print(x)</span><br><span class="line"></span><br><span class="line"># 查找全部记录</span><br><span class="line">record_all = mycol.find()</span><br><span class="line">for x in record_all:</span><br><span class="line">    print(x)</span><br><span class="line">print()</span><br><span class="line"></span><br><span class="line"># 我们可以使用 find() 方法来查询指定字段的数据，将要返回的字段对应值设置为 1。</span><br><span class="line">for x in mycol.find(&#123;&#125;,&#123; &quot;_id&quot;: 0, &quot;id&quot;: 1, &quot;value&quot;: 1 &#125;):</span><br><span class="line">    print(x)</span><br><span class="line">print()</span><br><span class="line"></span><br><span class="line"># 除了 _id 你不能在一个对象中同时指定 0 和 1，如果你设置了一个字段为 0，则其他都为 1，反之亦然。</span><br><span class="line">for x in mycol.find(&#123;&#125;,&#123;&quot;_id&quot;: 0, &quot;id&quot;: 0&#125;):</span><br><span class="line">    print(x)</span><br><span class="line">print()</span><br><span class="line"></span><br><span class="line"># 高级查询</span><br><span class="line">myquery = &#123;&quot;value&quot;: &#123;&quot;$gt&quot;: 88888&#125;&#125;</span><br><span class="line">mydoc = mycol.find(myquery)</span><br><span class="line">for x in mydoc:</span><br><span class="line">    print(x)</span><br><span class="line">print(1)</span><br><span class="line"></span><br><span class="line"># 使用正则表达式</span><br><span class="line">myquery = &#123; &quot;value&quot;: &#123; &quot;$regex&quot;: &quot;^R&quot; &#125; &#125;</span><br><span class="line">mydoc = mycol.find(myquery)</span><br><span class="line">for x in mydoc:</span><br><span class="line">    print(x)</span><br><span class="line">print()</span><br><span class="line"></span><br><span class="line"># 判断类型</span><br><span class="line">myquery = &#123;&quot;value&quot;: &#123;&quot;$type&quot;: &quot;int&quot;&#125;&#125;</span><br><span class="line">mydoc = mycol.find(myquery)</span><br><span class="line">for x in mydoc:</span><br><span class="line">    print(x)</span><br><span class="line">print()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 返回指定条数记录</span><br><span class="line">myresult = mycol.find().limit(3)</span><br><span class="line"># 输出结果</span><br><span class="line">for x in myresult:</span><br><span class="line">    print(x)</span><br></pre></td></tr></table></figure>
+        <h1 id="pymongo操作datetime，并用matplotlib画图"><a href="#pymongo操作datetime，并用matplotlib画图" class="headerlink" title="pymongo操作datetime，并用matplotlib画图"></a>pymongo操作datetime，并用matplotlib画图</h1><p>从csv导入mongo的time数据，会被转为string类型，在mongo shell里可以用下面的方式修改。其中，Date为时间字段名。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">db.data.find().forEach(function(doc)</span><br><span class="line">&#123;</span><br><span class="line">	doc.Date=new Date(doc.Date);</span><br><span class="line">	db.data.save(doc);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>将string类型转换为date类型后，就可以进行下面的操作了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">import pymongo</span><br><span class="line">import datetime</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">from dateutil import parser</span><br><span class="line">import matplotlib.dates as mdate</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">myclient = pymongo.MongoClient(&quot;mongodb://localhost:27017/&quot;)</span><br><span class="line">dblist = myclient.list_database_names()</span><br><span class="line"></span><br><span class="line">mydb = myclient[&apos;test_log&apos;]</span><br><span class="line"># 查找一条记录</span><br><span class="line">mycol = mydb[&quot;data&quot;]</span><br><span class="line"></span><br><span class="line"># 时间操作</span><br><span class="line">time1 = datetime.datetime.now()</span><br><span class="line">dateStr1 = &apos;2019-01-31T16:02:00Z&apos;</span><br><span class="line">dateStr2 = &apos;2019-01-31T16:010:00Z&apos;</span><br><span class="line">myDatetime1 = parser.parse(dateStr1)</span><br><span class="line">myDatetime2 = parser.parse(dateStr2)</span><br><span class="line">time_list = mycol.find(&#123;&quot;Date&quot;: &#123;&quot;$gte&quot;: myDatetime1, &quot;$lte&quot;:myDatetime2&#125;&#125;,&#123;&apos;_id&apos;:0,&apos;value&apos;:1,&quot;Date&quot;:1&#125;).sort(&apos;Date&apos;)</span><br><span class="line"></span><br><span class="line">print(&apos;------------------date--------------------&apos;)</span><br><span class="line">for x in time_list:</span><br><span class="line">    print(x)</span><br><span class="line">print(&apos;-------------------------------------------&apos;)</span><br><span class="line"></span><br><span class="line">time_list = mycol.find(&#123;&quot;Date&quot;: &#123;&quot;$gte&quot;: myDatetime1, &quot;$lte&quot;:myDatetime2&#125;&#125;,&#123;&apos;_id&apos;:0,&apos;value&apos;:1,&quot;Date&quot;:1&#125;).sort(&apos;Date&apos;)</span><br><span class="line">val_list = []</span><br><span class="line">dict_list = &#123;&#125;</span><br><span class="line">for i in time_list:</span><br><span class="line">    dict_list[i[&quot;Date&quot;]] = i[&quot;value&quot;]</span><br><span class="line">    val_list.append(i[&quot;value&quot;])</span><br><span class="line"></span><br><span class="line">x = list( dict_list.keys() )</span><br><span class="line">y = list( dict_list.values() )</span><br><span class="line"># print(y)</span><br><span class="line"># plt.plot(x,y,&apos;o-&apos;)</span><br><span class="line"># plt.show()</span><br><span class="line"></span><br><span class="line">print(y)</span><br><span class="line"></span><br><span class="line">fig1 = plt.figure(figsize=(8,5))</span><br><span class="line">ax1 = fig1.add_subplot(1,1,1)</span><br><span class="line"># ax1.xaxis.set_major_formatter(mdate.DateFormatter(&apos;%Y-%m-%d&apos;))#设置时间标签显示格式</span><br><span class="line">ax1.xaxis.set_major_formatter(mdate.DateFormatter(&apos;%H:%M&apos;))#设置时间标签显示格式</span><br><span class="line"># plt.xticks(pd.date_range(&apos;2014-09-01&apos;,&apos;2014-09-30&apos;),rotation=90)</span><br><span class="line">plt.plot(x,y,&apos;o-&apos;)</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line"># ## string转换为datetime类型</span><br><span class="line"># tmp = mycol.find(&#123;&#125;,&#123;&quot;_id&quot;: 0, &quot;value&quot;: 1, &quot;Date&quot;:1&#125;)</span><br><span class="line"># for x in tmp:</span><br><span class="line">#     date_str = x[&apos;Date&apos;]</span><br><span class="line">#     date_val = datetime.datetime.strptime(date_str, &apos;%Y/%m/%d %H:%M&apos;)</span><br><span class="line">#     print(date_val)</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -385,8 +388,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/27/mongodb基础/" rel="next" title="mongodb基础">
-                <i class="fa fa-chevron-left"></i> mongodb基础
+              <a href="/2019/08/27/pymongo基础/" rel="next" title="pymongo查询">
+                <i class="fa fa-chevron-left"></i> pymongo查询
               </a>
             
           </div>
@@ -394,10 +397,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/28/pymongo_datetime/" rel="prev" title="mongo datetime类型及操作">
-                mongo datetime类型及操作 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -529,7 +528,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pymongo基础"><span class="nav-number">1.</span> <span class="nav-text">pymongo基础</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pymongo操作datetime，并用matplotlib画图"><span class="nav-number">1.</span> <span class="nav-text">pymongo操作datetime，并用matplotlib画图</span></a></li></ol></div>
             
 
           </div>
