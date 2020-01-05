@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="django考试训练系统，从github上找了一个可以使用的简单版本，学习后进行进一步开发。过程中遇到不少问题，以下进行记录。  models.Grade.objects.create()可以向数据库中插入记录，（这里的Grade是model中的一个class）。这里model中存在外键：122. 打开admin管理员页面，报“django __str__ returned non-string">
+<meta name="description" content="django考试训练系统，从github上找了一个可以使用的简单版本，学习后进行进一步开发。过程中遇到不少问题，以下进行记录。  models.Grade.objects.create()可以向数据库中插入记录，（这里的Grade是model中的一个class）。这里model中存在外键： sid=models.ForeignKey(Student,on_delete=models.CASCADE">
 <meta name="keywords" content="django, python, html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="django考试训练系统踩坑">
 <meta property="og:url" content="http://yoursite.com/2020/01/05/django考试系统开发过程中踩坑/index.html">
 <meta property="og:site_name" content="Wakenforest">
-<meta property="og:description" content="django考试训练系统，从github上找了一个可以使用的简单版本，学习后进行进一步开发。过程中遇到不少问题，以下进行记录。  models.Grade.objects.create()可以向数据库中插入记录，（这里的Grade是model中的一个class）。这里model中存在外键：122. 打开admin管理员页面，报“django __str__ returned non-string">
+<meta property="og:description" content="django考试训练系统，从github上找了一个可以使用的简单版本，学习后进行进一步开发。过程中遇到不少问题，以下进行记录。  models.Grade.objects.create()可以向数据库中插入记录，（这里的Grade是model中的一个class）。这里model中存在外键： sid=models.ForeignKey(Student,on_delete=models.CASCADE">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-01-05T06:13:25.019Z">
+<meta property="og:updated_time" content="2020-01-05T13:18:39.792Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="django考试训练系统踩坑">
-<meta name="twitter:description" content="django考试训练系统，从github上找了一个可以使用的简单版本，学习后进行进一步开发。过程中遇到不少问题，以下进行记录。  models.Grade.objects.create()可以向数据库中插入记录，（这里的Grade是model中的一个class）。这里model中存在外键：122. 打开admin管理员页面，报“django __str__ returned non-string">
+<meta name="twitter:description" content="django考试训练系统，从github上找了一个可以使用的简单版本，学习后进行进一步开发。过程中遇到不少问题，以下进行记录。  models.Grade.objects.create()可以向数据库中插入记录，（这里的Grade是model中的一个class）。这里model中存在外键： sid=models.ForeignKey(Student,on_delete=models.CASCADE">
 
 
 
@@ -354,63 +354,56 @@
       
         <p>django考试训练系统，从github上找了一个可以使用的简单版本，学习后进行进一步开发。过程中遇到不少问题，以下进行记录。</p>
 <ol>
-<li><p>models.Grade.objects.create()可以向数据库中插入记录，（这里的Grade是model中的一个class）。这里model中存在外键：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2. 打开admin管理员页面，报“django __str__ returned non-string (type int)”错误。原因是在对应的model定义中，__str__(self)返回了AutoField的id，将return self.id改为return str(self.id)即可。</span><br><span class="line">3. bootstrap4中不存在panel标签了，使用card标签代替，使用方法如下：</span><br></pre></td></tr></table></figure></p>
-<pre><code>&lt;div class=&quot;card&quot;&gt;
-      &lt;div class=&quot;card-header&quot;&gt;头部&lt;/div&gt;
-      &lt;div class=&quot;card-body&quot;&gt;内容&lt;/div&gt; 
-      &lt;div class=&quot;card-footer&quot;&gt;底部&lt;/div&gt;
-&lt;/div&gt;</code></pre> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">	具体（颜色、链接等）可参考 https://www.runoob.com/bootstrap4/bootstrap4-cards.html</span><br><span class="line">4. 更改数据库遇到“python sqlite3.OperationalError: near &quot;AUTOINCREMENT&quot;: syntax error”错误。不知道为什么无法正常删除数据库，且无法python manage.py makemigrations。因此将migration文件夹中对应的向model.py中插入新的class对应的py文件改名备份。即可重新python manage.py makemigrations和python manage.py migrate。</span><br><span class="line">5. Django模板中使用if判断：</span><br></pre></td></tr></table></figure>
-
-<pre><code>{% if not my_message.name == 'a' %}aaa{% else %}bbbb{% endif %}
-		{% ifequal my_message.name 'a' %}aaa{% else %}bbb{% endifequal %}
-	<!--￼2-->
-
-		{% for paper1 in paper %}
-			<p>{{ paper1.title }}</p>
-		{% endfor %}
-	<!--￼3-->
-
-		headers = ["X", "Y", "Z", "XX", "YY"]
-		data = zip(headers, myarray.all())
-		return render(request, 'template.html', {'data': data})
-
-	<!--￼4-->
-
-		{% for header, row in data %}
-		    <tr>
-		        <th>{{ header }}</th>
-		        <td>{{ row }}</td>
-		    </tr>
-		{% endfor %}
-
-	<!--￼5-->
-
-		{% for ans_i in ans_sc %}
-			{% if forloop.parentloop.counter0 == forloop.counter0 %}
-				{% if not ans_i == test.answer %}
-					<p style="color:red;font-size:15px;">
-						正确答案：{{ test.answer }} ， 您的选择：
-						{{ ans_i }} 
-					</p>
-				{% else %}
-					<p style="color:green;font-size:15px;">
-						正确答案：{{ test.answer }} ， 您的选择：
-						{{ ans_i }} 
-					</p>
-				{% endif %}
-    {% endif %}
-{% endfor %}</code></pre> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">9. Django模板中提取list的长度：&#123;&#123; paper1.sid.all|length &#125;&#125;， |类似管道操作符， 其它诸如切片，大小写转换也可以使用该操作符实现。详见菜鸟教程https://www.runoob.com/django/django-template.html</span><br></pre></td></tr></table></figure>
-
-<pre><code>{% for subrow in subdic.content|slice:":5" %}
-		{% endfor %}</code></pre> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">10.  html返回上一页的写法：</span><br><span class="line">	超链接写法：</span><br></pre></td></tr></table></figure>
-
-<pre><code>&lt;a href=”#” onClick=”javascript :history.back(-1);”&gt;返回上一页&lt;/a&gt;
-&lt;a href=”#” onClick=”javascript :history.go(-1);”&gt;返回上一页&lt;/a&gt;</code></pre> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">按钮写法：</span><br></pre></td></tr></table></figure>
-
-<pre><code>&lt;input type=”button” name=”Submit” onclick=”javascript:history.back(-1);” value=”返回上一页”&gt;</code></pre><p> ```</p>
+<li><p>models.Grade.objects.create()可以向数据库中插入记录，（这里的Grade是model中的一个class）。这里model中存在外键： <code>sid=models.ForeignKey(Student,on_delete=models.CASCADE,default=&#39;&#39;)</code> 。直接使用<code>models.Grade.objects.create(sid_id=sid,paper_title=paper_inst.title,grade=mygrade)</code> 即可。这里的sid为从网页post过来的model Student的主键。</p>
 </li>
-<li></li>
+<li><p>打开admin管理员页面，报“django <strong>str</strong> returned non-string (type int)”错误。原因是在对应的model定义中，<strong>str</strong>(self)返回了AutoField的id，将return self.id改为return str(self.id)即可。</p>
+</li>
+<li><p>bootstrap4中不存在panel标签了，使用card标签代替，使用方法如下：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;card&quot;&gt;</span><br><span class="line">			&lt;div class=&quot;card-header&quot;&gt;头部&lt;/div&gt;</span><br><span class="line">			&lt;div class=&quot;card-body&quot;&gt;内容&lt;/div&gt; </span><br><span class="line">			&lt;div class=&quot;card-footer&quot;&gt;底部&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p> 具体（颜色、链接等）可参考 <a href="https://www.runoob.com/bootstrap4/bootstrap4-cards.html" target="_blank" rel="noopener">https://www.runoob.com/bootstrap4/bootstrap4-cards.html</a></p>
+</li>
+<li><p>更改数据库遇到“python sqlite3.OperationalError: near “AUTOINCREMENT”: syntax error”错误。不知道为什么无法正常删除数据库，且无法python manage.py makemigrations。因此将migration文件夹中对应的向model.py中插入新的class对应的py文件改名备份。即可重新python manage.py makemigrations和python manage.py migrate。</p>
+</li>
+<li><p>Django模板中使用if判断：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if not my_message.name == &apos;a&apos; %&#125;aaa&#123;% else %&#125;bbbb&#123;% endif %&#125;</span><br><span class="line">&#123;% ifequal my_message.name &apos;a&apos; %&#125;aaa&#123;% else %&#125;bbb&#123;% endifequal %&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Django模板中索引list。正常在模板中使用list，如下：</p>
+</li>
 </ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% for paper1 in paper %&#125;</span><br><span class="line">	&lt;p&gt;&#123;&#123; paper1.title &#125;&#125;&lt;/p&gt;</span><br><span class="line">&#123;% endfor %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当需要索引第i个元素时，可以用 <code>paper1.0</code> 这样的形式。</p>
+<p>另外，可以在for循环中使用 <code>forloop.counter</code> 或者 <code>forloop.counter0</code> 这样的形式，给出循环的序号（counter为从1开始循环，counter0表示从0开始循环）</p>
+<p>但是，不能使用<code>paper1.</code>这样的形式来进行索引。</p>
+<ol start="7">
+<li>Django模板中索引两个长度相同的list。由于不能使用forloop.counter索引，因此较难使用，但可以使用在view中zip两个列表的方式进行：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">headers = [&quot;X&quot;, &quot;Y&quot;, &quot;Z&quot;, &quot;XX&quot;, &quot;YY&quot;]</span><br><span class="line">data = zip(headers, myarray.all())</span><br><span class="line">return render(request, &apos;template.html&apos;, &#123;&apos;data&apos;: data&#125;)</span><br></pre></td></tr></table></figure>
+
+<pre><code>在template中，使用如下方式索引：
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;% for header, row in data %&#125;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">        &lt;th&gt;&#123;&#123; header &#125;&#125;&lt;/th&gt;</span><br><span class="line">        &lt;td&gt;&#123;&#123; row &#125;&#125;&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">&#123;% endfor %&#125;</span><br></pre></td></tr></table></figure></code></pre><ol start="8">
+<li><p>Django模板中索引一个querySet和一个list。这是我遇到的问题，querySet中有一个外键sid，链接了本试卷包含的所有单选题，querySet本身长度为1，即使转为list长度也仍为1。而另一个list中存储了单选题题用户给出的答案。因此，querySet和list的长度不同，无法使用zip，因此使用两层循环解决，使用forloop.counter和forloop.parentloop.counter（外层循环的序号）进行比较，达到索引的目的。</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;% for ans_i in ans_sc %&#125;</span><br><span class="line">	&#123;% if forloop.parentloop.counter0 == forloop.counter0 %&#125;</span><br><span class="line">		&#123;% if not ans_i == test.answer %&#125;</span><br><span class="line">			&lt;p style=&quot;color:red;font-size:15px;&quot;&gt;</span><br><span class="line">				正确答案：&#123;&#123; test.answer &#125;&#125; ， 您的选择：</span><br><span class="line">				&#123;&#123; ans_i &#125;&#125; </span><br><span class="line">			&lt;/p&gt;</span><br><span class="line">		&#123;% else %&#125;</span><br><span class="line">			&lt;p style=&quot;color:green;font-size:15px;&quot;&gt;</span><br><span class="line">				正确答案：&#123;&#123; test.answer &#125;&#125; ， 您的选择：</span><br><span class="line">				&#123;&#123; ans_i &#125;&#125; </span><br><span class="line">			&lt;/p&gt;</span><br><span class="line">		&#123;% endif %&#125;</span><br><span class="line">	&#123;% endif %&#125;</span><br><span class="line">&#123;% endfor %&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Django模板中提取list的长度：0， |类似管道操作符， 其它诸如切片，大小写转换也可以使用该操作符实现。详见菜鸟教程<a href="https://www.runoob.com/django/django-template.html" target="_blank" rel="noopener">https://www.runoob.com/django/django-template.html</a></p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% for subrow in subdic.content|slice:&quot;:5&quot; %&#125;</span><br><span class="line">&#123;% endfor %&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>html返回上一页的写法：</p>
+</li>
+</ol>
+<ul>
+<li>超链接写法：  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=”#” onClick=”javascript :history.back(-1);”&gt;返回上一页&lt;/a&gt;</span><br><span class="line">&lt;a href=”#” onClick=”javascript :history.go(-1);”&gt;返回上一页&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<ul>
+<li>按钮写法：  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=”button” name=”Submit” onclick=”javascript:history.back(-1);” value=”返回上一页”&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
 
       
     </div>
